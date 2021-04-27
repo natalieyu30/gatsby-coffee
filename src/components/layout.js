@@ -13,6 +13,7 @@ import "./layout.css"
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Navbar from './Globals/Navbar'
+import Footer from './Globals/Footer'
 
 const Layout = ({ children }) => {
 
@@ -20,6 +21,7 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       {children}
+      <Footer />
     </>
   )
 }
