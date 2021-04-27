@@ -55,7 +55,8 @@ body {
 .title {
   color: var(--darkBrown) !important;
 }
-.menu {
+.menu,
+.contact {
   background: #fff3e0;
 }
 .footer {

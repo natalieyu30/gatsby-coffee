@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Title from '../Globals/Title'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Img from 'gatsby-image'
 
 const getCategories = items => {
@@ -13,6 +14,7 @@ const getCategories = items => {
 const Menu = ({ items }) => {
   const [ coffeeItems, setCoffeeItems ] = useState(items)
   const [ categories, setCategories ] = useState(getCategories(items))
+  // const image = getImage()
   // console.log(categories)
 
   const handleItems = (category) => {
@@ -60,7 +62,8 @@ const Menu = ({ items }) => {
             {coffeeItems.map(item =>(
               <div key={item.id} className="col-11 col-md-6 my-3 d-flex mx-auto">
                 <div style={{width: '80px', height:'80px'}}>
-                  <Img fixed={item.image.fixed} />
+                  <GatsbyImage image={getImage(item.image)} alt={item.title} />
+                  {/* <Img fixed={item.image.fixed} /> */}
                 </div>
                 <div className="flex-grow-1 px-3">
                   <div className="d-flex justify-content-between">

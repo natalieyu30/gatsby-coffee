@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import BackgroundSection from '../components/Globals/BackgroundSection'
 import Info from '../components/Home/Info'
 import Menu from '../components/Home/Menu'
+import Products from '../components/Home/Products'
+import Contact from '../components/Home/Contact'
 
 
 const IndexPage = ({ data }) => (
@@ -15,6 +17,8 @@ const IndexPage = ({ data }) => (
     <BackgroundSection img={data.file.childImageSharp.fluid} />
     <Info />
     <Menu items={data.menu.nodes}/>
+    <Products />
+    <Contact />
   </Layout>
 )
 
@@ -38,9 +42,7 @@ export const query = graphql`
           description
         }
         image {
-          fixed(width: 80, height: 80) {
-            ...GatsbyContentfulFixed_tracedSVG
-          }
+          gatsbyImageData(layout: FIXED, placeholder: BLURRED, width: 80, height: 80)
         }
       }
     }
