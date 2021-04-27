@@ -14,7 +14,17 @@ const SingleProduct = ({product}) => {
         <div className="card-body text-center">
           <h6 className='text-capitalize fw-bold title'>{product.title}</h6>
           <p className=''>${product.price}</p>
-          <button className="btn btn-point mt-1 fw-bold">Add to Cart</button>
+          <button 
+            className="snipcart-add-item btn btn-point mt-1 fw-bold"
+            data-item-id={product.id}
+            data-item-name={product.title}
+            data-item-price={product.price}
+            data-item-image={product.image.fluid.src}
+            data-item-url='https://gatsby-coffee2021.netlify.com/'
+            data-item-quantity="1"
+            // data-item-taxes={tva}
+            // disabled={_stock === 0 ? true : false}
+          >Add to Cart</button>
         </div>
       </div>
     </div>

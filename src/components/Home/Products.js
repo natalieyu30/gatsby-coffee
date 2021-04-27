@@ -11,6 +11,9 @@ const productsQuery = graphql`
         title
         price
         image {
+          fluid{
+            src
+          }
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
